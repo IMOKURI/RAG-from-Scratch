@@ -7,15 +7,18 @@
 ## Features
 
 
-## Requirements
-
-
-## Installation
+## How to Use
 
 ```
 docker network create rag-system
-make build
+
+make build-fastchat
+make up-fastchat-controller
+make up-fastchat-model-worker
+make up-fastchat-api-server
+
+make build-rag
+make up-rag
 ```
 
 ## Configurations
-
