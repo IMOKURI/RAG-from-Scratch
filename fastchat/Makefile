@@ -23,7 +23,7 @@ up-fastchat-model-worker: ## Start FastChat model worker.
 	docker run -d --rm --name fastchat-model-worker \
 		--net rag-system \
 		--gpus all --shm-size=32g \
-		-v /home/sugi/.cache:/root/.cache \
+		-v $(XDG_CACHE_HOME):/root/.cache \
 		$(IMAGE_NAME):$(IMAGE_TAG) \
 		python3 -m fastchat.serve.model_worker \
 		--model-names gpt-3.5-turbo,text-davinci-003,text-embedding-ada-002 \
